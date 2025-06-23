@@ -1,0 +1,5 @@
+customtkinter
+reportlab
+pytest
+pytest-cov
+pyserial
