@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Sistema de Cronometragem PRO v14.0 - Arquitetura Cliente-Servidor com Design Premium
 import logging
+import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox, filedialog, ttk
-import customtkinter as ctk
 import queue
 from datetime import datetime, date, timedelta
 import socket

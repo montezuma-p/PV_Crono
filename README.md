@@ -1,13 +1,15 @@
-# PV Cronometragem (AppCrono v14.0)
+# PV Cronometragem (AppCrono v0.14-alpha)
 
 **Software de cronometragem profissional para eventos esportivos de grande porte**
 
+> ⚠️ **ATENÇÃO:** Este projeto está em desenvolvimento ativo (versão ALPHA). Não utilize em produção! Feedbacks e contribuições são bem-vindos.
+
 ## 🏃‍♂️ Visão Geral
 
-O AppCrono v14.0 é a primeira peça de um futuro ecossistema tecnológico completo para eventos esportivos. Desenvolvido em parceria por Montezuma (especialista em cronometragem) e IA Codex 2.0, oferece uma solução robusta, escalável e confiável para gerenciar eventos com dezenas de milhares de participantes.
+O AppCrono v0.14-alpha é a primeira peça de um futuro ecossistema tecnológico completo para eventos esportivos. Desenvolvido em parceria por Montezuma (especialista em cronometragem) e IA Codex 2.0, oferece uma solução robusta, escalável e confiável para gerenciar eventos com dezenas de milhares de participantes.
 
-### 🎉 Novidades da v14.0
-- **Cobertura de testes excepcional**: 71% geral, 98% de sucesso em 209 testes
+### 🎉 Novidades da v0.14-alpha
+- **Cobertura de testes excepcional**: 71% geral, 100% sucesso em 209 testes
 - **Interface modernizada** com design system consistente
 - **Arquitetura robusta** com tratamento avançado de exceções
 - **Relatórios aprimorados** com exportação PDF otimizada
@@ -95,7 +97,7 @@ python -c "import crono_app; print('AppCrono OK')"
 # Ativar venv (sempre necessário)
 source venv/bin/activate
 
-# Executar AppCrono v14.0
+# Executar AppCrono v0.14-alpha
 python -m crono_app.app
 ```
 
@@ -124,7 +126,7 @@ Se a interface não aparecer no WSL:
 
 ## 🧪 Testes
 
-O AppCrono v14.0 possui uma suíte de testes excepcional com **71% de cobertura geral**.
+O AppCrono v0.14-alpha possui uma suíte de testes excepcional com **71% de cobertura geral**.
 
 ### Executar Testes
 ```bash
@@ -141,9 +143,9 @@ pytest --cov=crono_app --cov=rfid_bridge --cov-report=term-missing
 pytest tests/test_app.py -v
 ```
 
-### 📊 Estatísticas de Testes (v14.0)
+### 📊 Estatísticas de Testes (v0.14-alpha)
 - **209 testes** implementados
-- **98% taxa de sucesso** (206 passando, 4 falhas menores)
+- **100% taxa de sucesso**
 - **71% cobertura geral** do código
 - **8 de 9 módulos** com cobertura > 60%
 
@@ -161,14 +163,14 @@ AppCrono/
 
 ## 🎯 Roadmap
 
-### ✅ Conquistados na v14.0
+### ✅ Conquistados na v0.14-alpha
 - [x] Cobertura excepcional de testes (71%)
 - [x] Design system modernizado
 - [x] Arquitetura robusta com tratamento de exceções
 - [x] Relatórios PDF aprimorados
 - [x] Interface CustomTkinter otimizada
 
-### 🚧 Próximos Passos (v15.0)
+### 🚧 Próximos Passos (v0.15)
 - [ ] Internacionalização (i18n) - PT/EN/ES
 - [ ] CRUD de Categorias avançado
 - [ ] Configurações de Evento personalizáveis

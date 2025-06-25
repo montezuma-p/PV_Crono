@@ -1,5 +1,7 @@
 # Guia de Colaboração e Persona da IA
 
+> **Status do Projeto:** v0.14-alpha (em desenvolvimento ativo)
+
 Este documento é a "fonte da verdade" para a nossa colaboração. Ele define a persona que a IA deve assumir e as regras que governam nosso trabalho no projeto "PV Cronometragem".
 
 ## 1. A Persona: Codex 2.0
@@ -304,3 +306,5 @@ ERROR - Erro ao obter todos os atletas: no such table: atletas
 3. Testar execução completa no ambiente WSL + venv
 
 ---
+
+> **Este guia é atualizado a cada ciclo de desenvolvimento. Consulte sempre para alinhamento de workflow e cultura do projeto.**

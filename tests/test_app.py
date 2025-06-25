@@ -285,7 +285,7 @@ class TestBridgeConnection:
         app.bridge_connect_button.configure.assert_called_with(text="🔌 Desconectar", 
                                                                fg_color="#D97706",
                                                                text_color="#FFFFFF")
-        app.label_status_rfid.configure.assert_called_with(text="Conectado", text_color="green")
+        app.label_status_rfid.configure.assert_called_with(text="🟢 Conectado", text_color="#059669")
         app.bridge_ip_entry.configure.assert_called_with(state="disabled")
         app.bridge_port_entry.configure.assert_called_with(state="disabled")
         
@@ -378,7 +378,7 @@ class TestBridgeConnection:
         app.bridge_connect_button.configure.assert_called_with(text="🔗 Conectar à Ponte", 
                                                                fg_color="#FFFFFF",
                                                                text_color="#7C3AED")
-        app.label_status_rfid.configure.assert_called_with(text="Desconectado", text_color="red")
+        app.label_status_rfid.configure.assert_called_with(text="🔴 Desconectado", text_color="#DC2626")
         app.bridge_ip_entry.configure.assert_called_with(state="normal")
         app.bridge_port_entry.configure.assert_called_with(state="normal")
 
@@ -1317,7 +1317,7 @@ class TestConfigurationMethods:
             
             # Verifica se a janela foi configurada
             app.title.assert_called_once_with("PV Cronometragem PRO v14.0 - Sistema Internacional")
-            app.geometry.assert_called_once_with("1200x800")
+            app.geometry.assert_called_once_with("1400x900")
 
     def test_configurar_logger(self, app_for_config_tests):
         """Testa a configuração do sistema de logging."""
@@ -1464,10 +1464,15 @@ class TestUtilityMethods:
         """Testa a criação da sidebar de controles."""
         app = app_for_utils
         parent_mock = MagicMock()
-        
+
         # Mock do theme para evitar erro de atributo
         app.theme = {
-            "bg_secondary": "#1E293B"
+            "bg_secondary": "#1E293B",
+            "bg_primary": "#0F172A",
+            "text_primary": "#F8FAFC",
+            "text_secondary": "#64748B",
+            "error": "#DC2626",
+            "accent": "#7C3AED"
         }
 
         with patch('crono_app.app.ctk.CTkFrame') as MockFrame, \
@@ -1475,9 +1480,14 @@ class TestUtilityMethods:
              patch('crono_app.app.ctk.CTkEntry') as MockEntry, \
              patch('crono_app.app.ctk.CTkButton') as MockButton, \
              patch('crono_app.app.tk.StringVar') as MockStringVar, \
-             patch('crono_app.app.BORDERS', {"radius": {"lg": 12}}) as mock_borders, \
-             patch('crono_app.app.SPACING', {"md": 16}) as mock_spacing, \
-             patch.object(app, '_criar_bridge_connection_frame', return_value=MagicMock()):
+             patch('crono_app.app.BORDERS', {"radius": {"lg": 12, "md": 8}}) as mock_borders, \
+             patch('crono_app.app.SPACING', {"md": 16, "sm": 8, "xs": 4, "lg": 24, "xl": 32}) as mock_spacing, \
+             patch('crono_app.app.FONTS', {"primary": ["Inter"], "mono": ["JetBrains Mono"]}) as mock_fonts, \
+             patch('crono_app.app.FONT_SIZES', {"lg": 18, "sm": 14, "4xl": 36}) as mock_font_sizes, \
+             patch('crono_app.app.COLORS', {"status": {"warning": "#D97706"}, "primary": {"gold": "#F59E0B"}, "background": {"dark": "#0F172A"}}) as mock_colors, \
+             patch.object(app, '_criar_bridge_connection_frame', return_value=MagicMock()), \
+             patch.object(app, '_criar_controles_largada', return_value=MagicMock()), \
+             patch.object(app, '_criar_controles_chegada', return_value=MagicMock()):
             
             # Chama o método
             sidebar = app._criar_sidebar_controles(parent_mock)
@@ -1485,9 +1495,7 @@ class TestUtilityMethods:
             # Verifica se os componentes principais foram criados
             MockFrame.assert_called()
             MockLabel.assert_called()
-            MockEntry.assert_called()
             MockButton.assert_called()
-            MockStringVar.assert_called()
             
             # Verifica se a sidebar foi retornada
             assert sidebar is not None

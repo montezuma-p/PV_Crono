@@ -39,6 +39,10 @@ class State(ABC):
 
 class PreparacaoState(State):
     """Estado inicial da aplicação, antes da largada."""
+    def __init__(self, app=None, *args, **kwargs):
+        # Permite inicialização com app para compatibilidade
+        pass
+
     def on_enter(self, app):
         app.label_status_corrida.configure(text="EM PREPARAÇÃO", text_color=app.THEME_COLORS["dark_blue"])
         app.label_cronometro.configure(text="00:00:00.000", text_color=app.THEME_COLORS["dark_blue"])
@@ -74,6 +78,9 @@ class PreparacaoState(State):
 
 class EmCursoState(State):
     """Estado da aplicação durante a corrida."""
+    def __init__(self, app=None, *args, **kwargs):
+        pass
+
     def on_enter(self, app):
         app.label_status_corrida.configure(text="EM CURSO", text_color=app.THEME_COLORS["green"])
         horario_largada_str = app.db.carregar_estado_corrida('horario_largada')
@@ -128,6 +135,9 @@ class EmCursoState(State):
 
 class FinalizadoState(State):
     """Estado da aplicação após a corrida ter sido finalizada."""
+    def __init__(self, app=None, *args, **kwargs):
+        pass
+
     def on_enter(self, app):
         app.label_status_corrida.configure(text="FINALIZADA", text_color=app.THEME_COLORS["red"])
 

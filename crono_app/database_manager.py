@@ -177,3 +177,7 @@ class DatabaseManager:
         except sqlite3.Error as e:
             logging.error(f"Erro ao carregar estado '{chave}': {e}")
             return default
+
+    def init_db(self):
+        """Compatibilidade: chama setup_database (usado pelo AppCrono)."""
+        self.setup_database()

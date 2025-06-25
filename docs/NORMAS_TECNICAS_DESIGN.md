@@ -1,13 +1,14 @@
 # Normas Técnicas e Guidelines de Design - Cronometragem Profissional
 
-**Data da Análise:** 22 de Junho de 2025  
+**Data da Análise:** 25 de Junho de 2025  
+**Versão:** 0.14-alpha (em desenvolvimento ativo)
 **Objetivo:** Estabelecer diretrizes técnicas e visuais para elevar o AppCrono aos padrões internacionais
 
 ---
 
-## 🏃‍♂️ **NORMAS OFICIAIS DE CRONOMETRAGEM**
+## 🏃‍♂️ NORMAS OFICIAIS DE CRONOMETRAGEM
 
-### **🌍 WORLD ATHLETICS (IAAF) - PADRÕES INTERNACIONAIS**
+### 🌍 WORLD ATHLETICS (IAAF) - PADRÕES INTERNACIONAIS
 
 #### **Requisitos Técnicos de Cronometragem:**
 1. **Precisão Mínima:** 
@@ -31,7 +32,7 @@
 - **Maratonas:** 42.195 km exatos
 - **Tolerância:** ±0.1% para percursos certificados
 
-### **🇧🇷 CBAT - NORMAS BRASILEIRAS**
+### 🇧🇷 CBAT - NORMAS BRASILEIRAS
 
 #### **Regulamentação Nacional:**
 1. **Homologação de Recordes:**
@@ -53,9 +54,9 @@
 
 ---
 
-## 🎨 **GUIDELINES DE DESIGN MODERNO**
+## 🎨 GUIDELINES DE DESIGN MODERNO
 
-### **📱 INTERFACE PRINCIPAL - PADRÕES PREMIUM**
+### 📱 INTERFACE PRINCIPAL - PADRÕES PREMIUM
 
 #### **1. PALETA DE CORES PROFISSIONAL:**
 ```css
@@ -112,7 +113,7 @@
 --shadow-lg: 0 10px 15px rgba(0,0,0,0.1)
 ```
 
-### **🏆 COMPONENTES VISUAIS PREMIUM**
+### **🏆 COMPONENTES VISUAIS PREMIUM
 
 #### **1. DASHBOARD PRINCIPAL:**
 ```
@@ -226,9 +227,9 @@
 
 ---
 
-## 🚀 **PADRÕES DE EXPERIÊNCIA DO USUÁRIO**
+## 🚀 PADRÕES DE EXPERIÊNCIA DO USUÁRIO
 
-### **📱 RESPONSIVIDADE TOTAL:**
+### 📱 RESPONSIVIDADE TOTAL:
 ```css
 /* Breakpoints Responsivos */
 --mobile: 480px      /* Smartphone */
@@ -237,14 +238,14 @@
 --wide: 1440px       /* Wide desktop */
 ```
 
-### **⌨️ ATALHOS DE TECLADO:**
+### ⌨️ ATALHOS DE TECLADO:
 - `Ctrl+N`: Nova prova
 - `Ctrl+S`: Salvar dados
 - `F5`: Atualizar resultados
 - `Esc`: Cancelar ação
 - `Space`: Play/Pause cronômetro
 
-### **🔍 BUSCA INTELIGENTE:**
+### 🔍 BUSCA INTELIGENTE:
 - Busca por nome, número, categoria
 - Filtros avançados em tempo real
 - Histórico de buscas
@@ -252,34 +253,34 @@
 
 ---
 
-## 📋 **CHECKLIST DE IMPLEMENTAÇÃO**
+## 📋 CHECKLIST DE IMPLEMENTAÇÃO
 
-### **🎨 INTERFACE MODERNA:**
+### 🎨 INTERFACE MODERNA:
 - [ ] Implementar design system completo
 - [ ] Criar componentes reutilizáveis
 - [ ] Adicionar dark/light mode
 - [ ] Implementar animações suaves
 - [ ] Otimizar para diferentes resoluções
 
-### **📊 DASHBOARD AVANÇADO:**
+### 📊 DASHBOARD AVANÇADO:
 - [ ] Métricas em tempo real
 - [ ] Gráficos interativos
 - [ ] Widgets customizáveis
 - [ ] Notificações inteligentes
 
-### **📄 RELATÓRIOS PREMIUM:**
+### 📄 RELATÓRIOS PREMIUM:
 - [ ] Templates profissionais
 - [ ] Gráficos e estatísticas
 - [ ] Branding customizável
 - [ ] Múltiplos formatos (PDF, Excel, Web)
 
-### **📱 EXPERIÊNCIA MOBILE:**
+### 📱 EXPERIÊNCIA MOBILE:
 - [ ] Interface responsiva total
 - [ ] Gestos touch otimizados
 - [ ] Performance nativa
 - [ ] Offline capabilities
 
-### **⚡ PERFORMANCE:**
+### ⚡ PERFORMANCE:
 - [ ] Carregamento <3 segundos
 - [ ] Atualizações em tempo real
 - [ ] Caching inteligente
@@ -287,21 +288,21 @@
 
 ---
 
-## 🎯 **PRÓXIMOS PASSOS PRIORITÁRIOS**
+## 🎯 PRÓXIMOS PASSOS PRIORITÁRIOS
 
-### **FASE 1 - MODERNIZAÇÃO VISUAL (2-4 semanas):**
+### FASE 1 - MODERNIZAÇÃO VISUAL (2-4 semanas):
 1. **Design System:** Implementar paleta, tipografia e componentes
 2. **Dashboard:** Recriar interface principal com layout moderno
 3. **Tabelas:** Redesignar exibição de resultados
 4. **PDFs:** Criar templates profissionais
 
-### **FASE 2 - UX AVANÇADA (4-6 semanas):**
+### FASE 2 - UX AVANÇADA (4-6 semanas):
 1. **Responsividade:** Interface adaptável
 2. **Interações:** Micro-animações e feedback
 3. **Performance:** Otimizações de velocidade
 4. **Acessibilidade:** Padrões WCAG 2.1
 
-### **FASE 3 - FUNCIONALIDADES PREMIUM (6-8 semanas):**
+### FASE 3 - FUNCIONALIDADES PREMIUM (6-8 semanas):
 1. **Analytics:** Dashboard com métricas avançadas
 2. **Customização:** Temas e branding personalizáveis
 3. **Integração:** APIs para outras plataformas
