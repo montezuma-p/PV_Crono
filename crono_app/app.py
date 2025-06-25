@@ -219,45 +219,39 @@ class AppCrono(ctk.CTk):
                               fg_color=self.theme["bg_secondary"],
                               corner_radius=BORDERS["radius"]["lg"])
         sidebar.grid_columnconfigure(0, weight=1)
-        
-        # --- Frame de Conexão com a Ponte RFID ---
-        self._criar_bridge_connection_frame(sidebar).grid(row=0, column=0, 
-                                                          padx=SPACING["md"], 
-                                                          pady=SPACING["md"], 
-                                                          sticky="ew")
-        
-        # --- Status da Corrida ---
-        status_frame = ctk.CTkFrame(sidebar, 
-                                   fg_color=self.theme["bg_primary"],
-                                   corner_radius=BORDERS["radius"]["md"])
-        status_frame.grid(row=1, column=0, padx=SPACING["md"], pady=SPACING["sm"], sticky="ew")
+
+        # --- NOVO: Frame horizontal para Ponte RFID e Status do Evento ---
+        top_frame = ctk.CTkFrame(sidebar, fg_color="transparent")
+        top_frame.grid(row=0, column=0, padx=SPACING["md"], pady=SPACING["md"], sticky="ew")
+        top_frame.grid_columnconfigure(0, weight=1)
+        top_frame.grid_columnconfigure(1, weight=1)
+
+        ponte_rfid = self._criar_bridge_connection_frame(top_frame)
+        ponte_rfid.grid(row=0, column=0, sticky="ew", padx=(0, SPACING["sm"]))
+
+        status_frame = ctk.CTkFrame(top_frame, fg_color=self.theme["bg_primary"], corner_radius=BORDERS["radius"]["md"])
+        status_frame.grid(row=0, column=1, sticky="ew")
         status_frame.grid_columnconfigure(1, weight=1)
-        
+
         # Título da seção
         status_title = ctk.CTkLabel(status_frame, 
                                    text="📊 STATUS DO EVENTO",
                                    font=(FONTS["primary"][0], FONT_SIZES["lg"], "bold"),
                                    text_color=self.theme["text_primary"])
         status_title.grid(row=0, column=0, columnspan=2, pady=(SPACING["md"], SPACING["sm"]), sticky="w")
-        
-        # Status da corrida
         ctk.CTkLabel(status_frame, 
                     text="Corrida:",
                     font=(FONTS["primary"][0], FONT_SIZES["sm"], "bold"),
                     text_color=self.theme["text_secondary"]).grid(row=1, column=0, padx=SPACING["md"], pady=SPACING["xs"], sticky="e")
-        
         self.label_status_corrida = ctk.CTkLabel(status_frame, 
                                                text="INICIANDO...",
                                                font=(FONTS["mono"][0], FONT_SIZES["sm"], "bold"),
                                                text_color=COLORS["status"]["warning"])
         self.label_status_corrida.grid(row=1, column=1, padx=SPACING["md"], sticky="w")
-        
-        # Status RFID
         ctk.CTkLabel(status_frame,
                     text="RFID:",
                     font=(FONTS["primary"][0], FONT_SIZES["sm"], "bold"),
                     text_color=self.theme["text_secondary"]).grid(row=2, column=0, padx=SPACING["md"], pady=(SPACING["xs"], SPACING["md"]), sticky="e")
-        
         self.label_status_rfid = ctk.CTkLabel(status_frame,
                                             text="Desconectado",
                                             font=(FONTS["mono"][0], FONT_SIZES["sm"], "bold"),
@@ -270,28 +264,24 @@ class AppCrono(ctk.CTk):
                                   corner_radius=BORDERS["radius"]["lg"],
                                   border_width=2,
                                   border_color=self.theme["accent"])
-        crono_frame.grid(row=2, column=0, padx=SPACING["md"], pady=SPACING["md"], sticky="ew")
+        crono_frame.grid(row=1, column=0, padx=SPACING["md"], pady=SPACING["md"], sticky="ew")
         crono_frame.grid_columnconfigure(0, weight=1)
-        
-        # Label do cronômetro com estilo premium
         self.label_cronometro = ctk.CTkLabel(crono_frame,
                                            text="00:00:00.000",
                                            font=(FONTS["mono"][0], FONT_SIZES["4xl"], "bold"),
                                            text_color=COLORS["primary"]["gold"])
         self.label_cronometro.grid(row=0, column=0, pady=SPACING["xl"])
-        
+
         # --- Controles de Largada ---
-        self._criar_controles_largada(sidebar).grid(row=3, column=0, 
+        self._criar_controles_largada(sidebar).grid(row=2, column=0, 
                                                    padx=SPACING["md"], 
                                                    pady=SPACING["sm"], 
                                                    sticky="ew")
-        
         # --- Controles de Chegada ---
-        self._criar_controles_chegada(sidebar).grid(row=4, column=0,
+        self._criar_controles_chegada(sidebar).grid(row=3, column=0,
                                                    padx=SPACING["md"],
                                                    pady=SPACING["sm"],
                                                    sticky="ew")
-        
         # --- Botão Finalizar ---
         self.btn_finalizar_corrida = ctk.CTkButton(sidebar,
                                                   text="🏁 FINALIZAR CORRIDA",
@@ -301,11 +291,10 @@ class AppCrono(ctk.CTk):
                                                   corner_radius=BORDERS["radius"]["md"],
                                                   font=(FONTS["primary"][0], FONT_SIZES["lg"], "bold"),
                                                   height=50)
-        self.btn_finalizar_corrida.grid(row=5, column=0, 
+        self.btn_finalizar_corrida.grid(row=4, column=0, 
                                        padx=SPACING["md"], 
                                        pady=SPACING["lg"], 
                                        sticky="ew")
-        
         return sidebar
 
     def _criar_controles_largada(self, parent):

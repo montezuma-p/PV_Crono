@@ -101,30 +101,19 @@ SHADOWS = {
 }
 
 # Função para configurar tema personalizado
-def get_theme_config(mode="dark"):
-    """Retorna configuração de tema baseada no modo (dark/light)"""
-    if mode == "dark":
-        return {
-            "bg_primary": COLORS["background"]["dark"],
-            "bg_secondary": "#1E293B",
-            "text_primary": "#F8FAFC", 
-            "text_secondary": COLORS["secondary"]["gray"],
-            "accent": COLORS["primary"]["blue"],
-            "success": COLORS["status"]["success"],
-            "warning": COLORS["status"]["warning"],
-            "error": COLORS["status"]["error"]
-        }
-    else:
-        return {
-            "bg_primary": COLORS["background"]["light"],
-            "bg_secondary": COLORS["background"]["card"], 
-            "text_primary": "#1E293B",
-            "text_secondary": COLORS["secondary"]["gray"],
-            "accent": COLORS["primary"]["blue"],
-            "success": COLORS["status"]["success"], 
-            "warning": COLORS["status"]["warning"],
-            "error": COLORS["status"]["error"]
-        }
+
+def get_theme_config(mode="light"):
+    """Retorna configuração de tema baseada no modo (apenas light)"""
+    return {
+        "bg_primary": COLORS["background"]["light"],
+        "bg_secondary": COLORS["background"]["card"],
+        "text_primary": "#1E293B",
+        "text_secondary": COLORS["secondary"]["gray"],
+        "accent": COLORS["primary"]["blue"],
+        "success": COLORS["status"]["success"],
+        "warning": COLORS["status"]["warning"],
+        "error": COLORS["status"]["error"]
+    }
 
 # Ícones e Elementos Visuais
 ICONS = {
@@ -175,10 +164,10 @@ ANIMATIONS = {
 
 # Configurações de Layout
 LAYOUT = {
-    "container_max": 1440,     # px
-    "sidebar_width": 280,      # px
-    "header_height": 64,       # px
-    "card_min_height": 120,    # px
+    "container_max": "100vw",  # Largura máxima ajustada para ocupar toda a tela
+    "sidebar_width": "20vw",  # Sidebar proporcional ao tamanho da tela
+    "header_height": "10vh",  # Header proporcional ao tamanho da tela
+    "card_min_height": "15vh",  # Altura mínima dos cards ajustada
 }
 
 # Z-index para layering
@@ -212,12 +201,11 @@ THEMES = {
         "text_primary": "#1F2937",
         "text_secondary": COLORS["secondary"]["gray"],
         "border": "#E5E7EB",
-    },
-    "dark": {
-        "bg_primary": COLORS["background"]["dark"],
-        "bg_secondary": "#1E293B",
-        "text_primary": "#F8FAFC",
-        "text_secondary": "#94A3B8",
-        "border": "#334155",
     }
 }
+
+# Função para calcular tamanhos responsivos
+
+def get_responsive_size(base_size: int, screen_dimension: str) -> str:
+    """Retorna tamanho proporcional baseado na dimensão da tela."""
+    return f"calc({base_size}px + {screen_dimension} * 0.01)"

@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/montezuma/AppCrono
+configfile: pytest.ini
+testpaths: tests
+plugins: cov-6.2.1
+collected 209 items
+
+tests/test_app.py ...................................................... [ 25%]
+.......                                                                  [ 29%]
+tests/test_bridge.py .............                                       [ 35%]
+tests/test_business_logic.py .....                                       [ 37%]
+tests/test_custom_exceptions.py ......                                   [ 40%]
+tests/test_database_manager.py .................                         [ 48%]
+tests/test_design_system.py ..............                               [ 55%]
+tests/test_integration.py ...                                            [ 56%]
+tests/test_modern_reports.py ....................                        [ 66%]
+tests/test_rfid_reader.py ...............................                [ 81%]
+tests/test_ui_states.py .............................                    [ 95%]
+tests/test_utils.py ..........                                           [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------
+crono_app/__init__.py                0      0   100%
+crono_app/app.py                   640    250    61%   138-169, 173-214, 313-350, 354-395, 595-610, 613-652, 711-715, 718-779, 782-842, 845-846, 850-927, 958-962, 988-989, 1014-1021, 1074, 1105-1106, 1141-1148
+crono_app/business_logic.py         87     17    80%   31, 58, 88-89, 95, 98, 121-124, 129-135
+crono_app/custom_exceptions.py      20      0   100%
+crono_app/database_manager.py      133     23    83%   30-33, 70-71, 88-90, 101-103, 137-139, 154-155, 164-165, 177-179, 183
+crono_app/design_system.py          21      3    86%   197, 201, 205
+crono_app/modern_reports.py        168     59    65%   29-33, 87-93, 96, 235-236, 242-253, 293-294, 314-317, 350-373, 377-395, 399-411
+crono_app/ui_states.py             114      0   100%
+crono_app/utils.py                  12      0   100%
+rfid_bridge/__init__.py              0      0   100%
+rfid_bridge/bridge.py              180     24    87%   112-114, 119-120, 183-184, 186, 193-201, 209-213, 237-239
+rfid_bridge/rfid_reader.py         119     37    69%   135-187
+--------------------------------------------------------------
+TOTAL                             1494    413    72%
+============================= 209 passed in 11.59s =============================

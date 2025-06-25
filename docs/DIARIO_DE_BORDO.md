@@ -36,5 +36,16 @@ Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros cr
 
 ---
 
+## [25/06/2025] Refatoração de Interface: Sidebar Otimizada
+
+- Ponte RFID e Status do Evento reposicionados lado a lado no topo da sidebar.
+- Layout da interface ajustado para tema claro e responsivo.
+- Garantido que todos os controles principais fiquem visíveis sem rolagem.
+- Foco total em funcionalidade e acessibilidade, abandonando padrões estéticos.
+
+> Mudanças visam maior usabilidade e robustez, alinhadas à nova diretriz do projeto.
+
+---
+
 > **Status atual:** v0.14-alpha (em desenvolvimento ativo, não usar em produção)
 > **Próximos passos:** internacionalização, CRUD avançado, plataforma web.
