@@ -129,3 +129,11 @@ PV_Crono/
 > ⚠️ **AVISO IMPORTANTE:**
 > A interface de gerenciamento de categorias (CRUD via modal) foi adicionada na versão atual, mas ainda NÃO está coberta por testes automatizados (pytest). Use com cautela e reporte qualquer problema.
 
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+

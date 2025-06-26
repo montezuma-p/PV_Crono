@@ -64,5 +64,15 @@ Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros cr
 
 ---
 
+## [26/06/2025] Licença MIT Adicionada ao Projeto
+
+- Arquivo LICENSE criado na raiz do repositório, adotando oficialmente a Licença MIT para todo o código-fonte e documentação.
+- README.md atualizado com seção de licença e link para o arquivo LICENSE.
+- Todos os colaboradores e usuários agora têm clareza sobre os direitos de uso, modificação e distribuição do software.
+
+> Mudança importante para garantir transparência legal e facilitar contribuições externas.
+
+---
+
 > **Status atual:** v0.14-alpha (em desenvolvimento ativo, não usar em produção)
 > **Próximos passos:** internacionalização, CRUD avançado, plataforma web.
