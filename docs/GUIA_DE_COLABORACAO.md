@@ -37,7 +37,7 @@ Nosso trabalho seguirá um fluxo estruturado para garantir eficiência e qualida
 
 ## 3. Arquitetura e Decisões Chave
 
-*   **Nome do Projeto:** O projeto nasceu como "QuantumLeap" e evoluiu para o atual "PV Cronometragem" / "AppCrono".
+*   **Nome do Projeto:** O projeto nasceu como "QuantumLeap" e evoluiu para o atual "PV Cronometragem" / "PV Crono".
 *   **Separação de Aplicações:** O sistema é dividido em `crono_app` (UI e lógica principal) e `rfid_bridge` (comunicação com hardware) para desacoplar as responsabilidades.
 *   **Comunicação via Socket:** A comunicação entre as duas aplicações é feita via socket.
 *   **Banco de Dados:** Usamos SQLite gerenciado pela classe `DatabaseManager`.
@@ -118,7 +118,7 @@ Nossa estratégia agressiva de testes atingiu um resultado astronômico:
 
 ### 🚀 Status: EXCELÊNCIA ESTABELECIDA
 
-O AppCrono agora é um **exemplo de referência** em qualidade de código, com uma das mais robustas suítes de testes da categoria. Esta base sólida nos posiciona para:
+O PV Crono agora é um **exemplo de referência** em qualidade de código, com uma das mais robustas suítes de testes da categoria. Esta base sólida nos posiciona para:
 
 1. **Desenvolvimento acelerado** de novas funcionalidades
 2. **Refatorações seguras** com confiança total
@@ -246,7 +246,7 @@ python -c "import crono_app.app; print('Interface module OK')"
 #### **Validação do Ambiente:**
 ```bash
 # Script de validação completa
-echo "=== Validação Ambiente AppCrono ==="
+echo "=== Validação Ambiente PV Crono ==="
 echo "1. Python venv: $(which python)"
 echo "2. DISPLAY: $DISPLAY"
 echo "3. X11 test:"
@@ -254,7 +254,7 @@ xclock &
 sleep 2 && pkill xclock
 echo "4. Imports:"
 python -c "import tkinter; import customtkinter; print('GUI OK')"
-python -c "import crono_app; print('AppCrono OK')"
+python -c "import crono_app; print('PV Crono OK')"
 echo "=== Ambiente validado! ==="
 ```
 
@@ -264,7 +264,7 @@ Com WSL + venv, nosso workflow fica:
 
 1. **Iniciar sessão:**
    ```bash
-   cd /path/to/AppCrono
+   cd /path/to/PV_Crono
    source venv/bin/activate
    export DISPLAY=:0.0  # se necessário
    ```

@@ -2,7 +2,7 @@
 
 **Data da Análise:** 25 de Junho de 2025  
 **Versão:** 0.14-alpha (em desenvolvimento ativo)
-**Objetivo:** Identificar gaps competitivos e oportunidades de diferenciação para o AppCrono
+**Objetivo:** Identificar gaps competitivos e oportunidades de diferenciação para o PV Crono
 
 ---
 
@@ -57,7 +57,7 @@
 
 ## 📊 **MATRIZ DE FUNCIONALIDADES**
 
-| **Funcionalidade** | **AppCrono** | **MYLAPS** | **ChronoTrack** | **Race Result** | **Cronotag/Cronorio** |
+| **Funcionalidade** | **PV Crono** | **MYLAPS** | **ChronoTrack** | **Race Result** | **Cronotag/Cronorio** |
 |-------------------|-------------|------------|----------------|----------------|---------------------|
 | **CRONOMETRAGEM** | | | | | |
 | RFID/UHF Support | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -99,7 +99,7 @@
 
 ## 🚨 **GAPS CRÍTICOS IDENTIFICADOS**
 
-### **🔴 FUNCIONALIDADES AUSENTES NO APPCRONO:**
+### **🔴 FUNCIONALIDADES AUSENTES NO PV CRONO:**
 
 #### **1. ECOSYSTEM WEB COMPLETO**
 - ❌ **Sistema de inscrição online** (MYLAPS/ChronoTrack têm)
@@ -209,6 +209,6 @@
 
 ---
 
-> **Nota:** O AppCrono está em fase ALPHA (v0.14), com arquitetura e testes robustos, mas ainda em evolução. Diferenciais competitivos serão ampliados nas próximas versões.
+> **Nota:** O PV Crono está em fase ALPHA (v0.14), com arquitetura e testes robustos, mas ainda em evolução. Diferenciais competitivos serão ampliados nas próximas versões.
 
-**O AppCrono tem todas as condições técnicas para se tornar o "MYLAPS brasileiro"!** 🇧🇷🚀
+**O PV Crono tem todas as condições técnicas para se tornar o "MYLAPS brasileiro"!** 🇧🇷🚀

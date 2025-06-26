@@ -1,8 +1,8 @@
-# Visão Geral do Projeto: PV Cronometragem (AppCrono)
+# Visão Geral do Projeto: PV Cronometragem (PV Crono)
 
 ## 1. O Que é o Projeto?
 
-O **PV Cronometragem**, ou **AppCrono**, é a primeira peça de um futuro **ecossistema tecnológico para eventos esportivos de grande porte**. O projeto, que evoluiu da ideia original "QuantumLeap", está sendo desenvolvido em parceria por Montezuma, um profissional com experiência no mercado de cronometragem, e a IA Codex 2.0.
+O **PV Cronometragem**, ou **PV Crono**, é a primeira peça de um futuro **ecossistema tecnológico para eventos esportivos de grande porte**. O projeto, que evoluiu da ideia original "QuantumLeap", está sendo desenvolvido em parceria por Montezuma, um profissional com experiência no mercado de cronometragem, e a IA Codex 2.0.
 
 > ⚠️ **STATUS DO PROJETO:**
 > - **Versão atual:** 0.14-alpha (em desenvolvimento ativo)
@@ -38,7 +38,7 @@ Estamos focados na **expansão massiva da cobertura de testes** antes de adicion
 
 ## 3. Para Onde Queremos Chegar (A Grande Visão)
 
-Nossa visão é GIGANTE. O AppCrono é o primeiro passo. O objetivo final é criar um **ecossistema completo e dominante** para o mercado de corridas de rua e outros eventos.
+Nossa visão é GIGANTE. O PV Crono é o primeiro passo. O objetivo final é criar um **ecossistema completo e dominante** para o mercado de corridas de rua e outros eventos.
 
 O futuro do projeto inclui, mas não se limita a:
 - Plataforma web integrada

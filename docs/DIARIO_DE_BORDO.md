@@ -10,7 +10,7 @@ Este arquivo registra as missões concluídas, decisões e aprendizados do desen
 
 ### Objetivo
 
-Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros críticos de inicialização, mocks e interface, preparando o AppCrono para evolução segura.
+Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros críticos de inicialização, mocks e interface, preparando o PV Crono para evolução segura.
 
 ### Resumo da Execução
 

@@ -2,7 +2,7 @@
 
 ## Interface e Funcionalidades
 
-### **O que o concorrente possui que o AppCrono não tem:**
+### **O que o concorrente possui que o PV Crono não tem:**
 
 1. **Resultados em Tempo Real:**
    - Exibição instantânea de tempos intermediários e finais para cada atleta.
@@ -28,7 +28,7 @@
 
 ---
 
-## Pontos de Melhoria para o AppCrono
+## Pontos de Melhoria para o PV Crono
 
 ### **Funcionalidades Prioritárias:**
 

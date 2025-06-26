@@ -1,4 +1,4 @@
-# Plano de Batalha - AppCrono
+# Plano de Batalha - PV Crono
 
 Este documento centraliza as próximas tarefas de desenvolvimento, organizadas por prioridade estratégica.
 
