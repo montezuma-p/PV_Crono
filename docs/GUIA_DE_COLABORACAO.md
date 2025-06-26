@@ -283,28 +283,6 @@ Com WSL + venv, nosso workflow fica:
    deactivate  # sair da venv
    ```
 
----
 
-## 🚨 ALERTA: Problemas Críticos Identificados
-
-### ❌ Crash na Inicialização da Aplicação
-**Detectado em:** 22/06/2025 22:48h  
-**Ambiente:** WSL Ubuntu + venv  
-**Status:** Requer correção urgente
-
-**Erro Principal:**
-```bash
-CRITICAL - Falha CRÍTICA ao inicializar o banco de dados: 'DatabaseManager' object has no attribute 'init_db'
-ERROR - Erro ao obter todos os atletas: no such table: atletas
-```
-
-**Impacto:** A aplicação inicia mas crasha imediatamente, impedindo uso normal.
-
-**Próximos Passos:**
-1. Verificar implementação do método `init_db` no `DatabaseManager`
-2. Corrigir inicialização do schema do banco de dados
-3. Testar execução completa no ambiente WSL + venv
-
----
 
 > **Este guia é atualizado a cada ciclo de desenvolvimento. Consulte sempre para alinhamento de workflow e cultura do projeto.**
