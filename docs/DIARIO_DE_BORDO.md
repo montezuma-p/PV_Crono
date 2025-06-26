@@ -47,5 +47,22 @@ Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros cr
 
 ---
 
+## [26/06/2025] CRUD de Categorias - MVP e Feedback de Usabilidade
+
+- Implementado CRUD de categorias acessível por botão no cabeçalho do app (modal "Gerenciar Categorias").
+- Backend robusto e testado, interface funcional, mas precisa de ajustes de UX.
+- Feedback: botão estava pouco visível quando vinculado à aba, agora está sempre no cabeçalho.
+- Modal abriu corretamente, mas a interface ficou pouco intuitiva e, em telas pequenas, as colunas ficam cortadas.
+- Usuário relatou dificuldade de uso e de encontrar as ações.
+- **Próxima sessão:**
+    - Melhorar a formatação e responsividade do modal de categorias.
+    - Tornar a interface mais intuitiva (ex: botões mais claros, instruções, layout mais amigável).
+    - Pesquisar apps brasileiros e internacionais com gerenciamento de categorias/abas para inspiração de UX.
+    - Documentar padrões encontrados e propor melhorias para o PV Crono.
+
+> Missão documentada conforme workflow. Aguardando novas instruções para evoluir a interface e a experiência do usuário.
+
+---
+
 > **Status atual:** v0.14-alpha (em desenvolvimento ativo, não usar em produção)
 > **Próximos passos:** internacionalização, CRUD avançado, plataforma web.

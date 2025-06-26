@@ -53,11 +53,18 @@ class DatabaseManager:
             CREATE TABLE IF NOT EXISTS atletas (
                 num INTEGER PRIMARY KEY, nome TEXT NOT NULL, sexo TEXT NOT NULL CHECK(sexo IN ('M', 'F')),
                 data_nascimento TEXT NOT NULL, modalidade TEXT NOT NULL,
-                tempo_absoluto_chegada TEXT, tempo_liquido REAL
+                tempo_absoluto_chegada TEXT, tempo_liquido REAL, categoria TEXT NOT NULL DEFAULT 'GERAL'
             );"""
             sql_criar_tabela_estado = "CREATE TABLE IF NOT EXISTS estado_corrida (chave TEXT PRIMARY KEY, valor TEXT);"
+            sql_criar_tabela_categorias = """
+            CREATE TABLE IF NOT EXISTS categorias (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL UNIQUE,
+                descricao TEXT
+            );"""
             cursor.execute(sql_criar_tabela_atletas)
             cursor.execute(sql_criar_tabela_estado)
+            cursor.execute(sql_criar_tabela_categorias)
 
             # 2. Adicionar a coluna 'categoria' se ela não existir (operação de migração)
             try:
@@ -181,3 +188,37 @@ class DatabaseManager:
     def init_db(self):
         """Compatibilidade: chama setup_database (usado pelo AppCrono)."""
         self.setup_database()
+
+    # CRUD de Categorias
+    def adicionar_categoria(self, nome: str, descricao: str = None):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                "INSERT INTO categorias (nome, descricao) VALUES (?, ?)",
+                (nome.strip().upper(), descricao)
+            )
+            conn.commit()
+            self._notify()
+
+    def editar_categoria(self, categoria_id: int, novo_nome: str, nova_descricao: str = None):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(
+                "UPDATE categorias SET nome = ?, descricao = ? WHERE id = ?",
+                (novo_nome.strip().upper(), nova_descricao, categoria_id)
+            )
+            conn.commit()
+            self._notify()
+
+    def remover_categoria(self, categoria_id: int):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM categorias WHERE id = ?", (categoria_id,))
+            conn.commit()
+            self._notify()
+
+    def listar_categorias(self):
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, nome, descricao FROM categorias ORDER BY nome ASC")
+            return cursor.fetchall()

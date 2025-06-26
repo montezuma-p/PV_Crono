@@ -89,7 +89,7 @@ class AppCrono(ctk.CTk):
         ctk.set_appearance_mode("Dark")
         ctk.set_default_color_theme("blue")
         
-        self.title("PV Cronometragem PRO v14.0 - Sistema Internacional")
+        self.title("PV Cronometragem ALPHA v0.14.0")
         self.geometry("1400x900")  # Aumenta para comportar melhor layout
         # self.minsize(1200, 800)  # CustomTkinter não suporta minsize
         
@@ -201,7 +201,17 @@ class AppCrono(ctk.CTk):
                                          corner_radius=BORDERS["radius"]["md"],
                                          font=(FONTS["primary"][0], FONT_SIZES["sm"], "bold"))
         self.btn_importar.pack(side="left", padx=(0, SPACING["sm"]))
-        
+
+        # NOVO: Botão de Categorias sempre visível no cabeçalho
+        self.btn_categorias = ctk.CTkButton(actions_frame,
+                                            text="🏷️ Categorias",
+                                            command=self._abrir_modal_categorias,
+                                            fg_color=self.theme["success"],
+                                            hover_color=COLORS["secondary"]["teal"],
+                                            corner_radius=BORDERS["radius"]["md"],
+                                            font=(FONTS["primary"][0], FONT_SIZES["sm"], "bold"))
+        self.btn_categorias.pack(side="left", padx=(0, SPACING["sm"]))
+
         self.btn_reiniciar = ctk.CTkButton(actions_frame, 
                                           text="🔄 Reiniciar Prova",
                                           command=self._ui_reiniciar_prova,
@@ -560,12 +570,16 @@ class AppCrono(ctk.CTk):
         frame = ctk.CTkFrame(parent)
         frame.pack(pady=20, padx=20, fill="x")
 
-        ctk.CTkLabel(frame, text="Buscar Atleta (Nº):").grid(row=0, column=0, sticky="e")
+        # Botão para gerenciar categorias
+        btn_categorias = ctk.CTkButton(frame, text="Gerenciar Categorias", fg_color=self.theme["accent"], command=self._abrir_modal_categorias)
+        btn_categorias.grid(row=0, column=0, columnspan=3, pady=(0, 10))
+
+        ctk.CTkLabel(frame, text="Buscar Atleta (Nº):").grid(row=1, column=0, sticky="e")
         busca_var = tk.StringVar()
         entry_busca = ctk.CTkEntry(frame, textvariable=busca_var, width=80)
-        entry_busca.grid(row=0, column=1, padx=5)
+        entry_busca.grid(row=1, column=1, padx=5)
         btn_buscar = ctk.CTkButton(frame, text="Buscar", width=60)
-        btn_buscar.grid(row=0, column=2, padx=5)
+        btn_buscar.grid(row=1, column=2, padx=5)
 
         # Campos de edição
         labels = ["Nome", "Sexo (M/F)", "Data Nascimento (dd/mm/aaaa)", "Categoria", "Modalidade"]
@@ -642,6 +656,81 @@ class AppCrono(ctk.CTk):
 
         btn_buscar.configure(command=buscar)
         btn_salvar.configure(command=salvar)
+
+    def _abrir_modal_categorias(self):
+        modal = ctk.CTkToplevel(self)
+        modal.title("Gerenciar Categorias")
+        modal.geometry("500x400")
+        # modal.grab_set()  # Removido para evitar erro de foco
+
+        # Listagem de categorias
+        tree = ttk.Treeview(modal, columns=("id", "nome", "descricao"), show="headings", height=10)
+        tree.heading("id", text="ID")
+        tree.heading("nome", text="Nome")
+        tree.heading("descricao", text="Descrição")
+        tree.column("id", width=40, anchor="center")
+        tree.column("nome", width=120)
+        tree.column("descricao", width=250)
+        tree.pack(pady=10, padx=10, fill="x")
+
+        def atualizar_tree():
+            for i in tree.get_children(): tree.delete(i)
+            for cat in self.db.listar_categorias():
+                tree.insert("", "end", values=cat)
+        atualizar_tree()
+
+        # Entradas para adicionar/editar
+        nome_var = tk.StringVar()
+        desc_var = tk.StringVar()
+        entry_nome = ctk.CTkEntry(modal, textvariable=nome_var, placeholder_text="Nome da categoria")
+        entry_nome.pack(pady=2, padx=10, fill="x")
+        entry_desc = ctk.CTkEntry(modal, textvariable=desc_var, placeholder_text="Descrição (opcional)")
+        entry_desc.pack(pady=2, padx=10, fill="x")
+
+        def adicionar():
+            if not nome_var.get().strip():
+                messagebox.showerror("Erro", "O nome da categoria é obrigatório.")
+                return
+            try:
+                self.db.adicionar_categoria(nome_var.get(), desc_var.get())
+                atualizar_tree()
+                nome_var.set("")
+                desc_var.set("")
+            except Exception as e:
+                messagebox.showerror("Erro", f"Não foi possível adicionar: {e}")
+
+        def editar():
+            sel = tree.selection()
+            if not sel:
+                messagebox.showwarning("Selecione", "Selecione uma categoria para editar.")
+                return
+            item = tree.item(sel[0])
+            cat_id = item['values'][0]
+            try:
+                self.db.editar_categoria(cat_id, nome_var.get(), desc_var.get())
+                atualizar_tree()
+            except Exception as e:
+                messagebox.showerror("Erro", f"Não foi possível editar: {e}")
+
+        def remover():
+            sel = tree.selection()
+            if not sel:
+                messagebox.showwarning("Selecione", "Selecione uma categoria para remover.")
+                return
+            item = tree.item(sel[0])
+            cat_id = item['values'][0]
+            if messagebox.askyesno("Confirmar", "Remover esta categoria?"):
+                try:
+                    self.db.remover_categoria(cat_id)
+                    atualizar_tree()
+                except Exception as e:
+                    messagebox.showerror("Erro", f"Não foi possível remover: {e}")
+
+        btn_frame = ctk.CTkFrame(modal)
+        btn_frame.pack(pady=10)
+        ctk.CTkButton(btn_frame, text="Adicionar", command=adicionar, fg_color=self.theme["success"]).pack(side="left", padx=5)
+        ctk.CTkButton(btn_frame, text="Editar", command=editar, fg_color=self.theme["accent"]).pack(side="left", padx=5)
+        ctk.CTkButton(btn_frame, text="Remover", command=remover, fg_color=self.theme["error"]).pack(side="left", padx=5)
 
     def _popular_aba_resultados(self, parent):
         parent.grid_columnconfigure(0, weight=1)

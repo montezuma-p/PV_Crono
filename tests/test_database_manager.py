@@ -213,3 +213,27 @@ class TestDatabaseOperations:
         """Verifica se o valor padrão é retornado para uma chave inexistente."""
         valor = db_manager.carregar_estado_corrida("chave_que_nao_existe", default="padrao")
         assert valor == "padrao"
+
+
+class TestCategoriaCRUD:
+    def test_adicionar_e_listar_categoria(self, db_manager):
+        db_manager.adicionar_categoria("JUVENIL", "Atletas até 18 anos")
+        categorias = db_manager.listar_categorias()
+        assert len(categorias) == 1
+        assert categorias[0][1] == "JUVENIL"
+        assert categorias[0][2] == "Atletas até 18 anos"
+
+    def test_editar_categoria(self, db_manager):
+        db_manager.adicionar_categoria("ADULTO", "Atletas adultos")
+        categoria = db_manager.listar_categorias()[0]
+        db_manager.editar_categoria(categoria[0], "ADULTO MASTER", "Acima de 30 anos")
+        categorias = db_manager.listar_categorias()
+        assert categorias[0][1] == "ADULTO MASTER"
+        assert categorias[0][2] == "Acima de 30 anos"
+
+    def test_remover_categoria(self, db_manager):
+        db_manager.adicionar_categoria("PCD", "Pessoa com deficiência")
+        categoria = db_manager.listar_categorias()[0]
+        db_manager.remover_categoria(categoria[0])
+        categorias = db_manager.listar_categorias()
+        assert len(categorias) == 0
