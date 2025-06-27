@@ -49,13 +49,14 @@ O futuro do projeto inclui, mas não se limita a:
 ## 4. Visão Atual
 - PV Crono é um sistema de cronometragem esportiva robusto, preciso e em evolução contínua.
 - Foco em confiabilidade, precisão, modularidade e experiência de usuário premium.
-- Stack em transição para frameworks de interface premium (Qt, Flutter ou similar).
+- Stack de interface oficialmente migrada para **Flutter Desktop** (monorepo: backend Python + frontend Flutter juntos).
 
 ## 5. Diagnóstico Estratégico (Jun/2025)
 - Cobertura de testes acima de 70%, arquitetura separada (UI, lógica, hardware), documentação clara.
 - Pontos de atenção: falta de features de ponta (resultados em tempo real, splits intermediários, backup automático, analytics avançados, precisão sub-segundo, integração multi-dispositivo).
-- Stack Python + CustomTkinter é ótima para MVP, mas limita interface e performance para cronometragem profissional.
-- Roadmap definido para modularização, features de ponta e pesquisa de benchmarks globais.
+- Stack Python + CustomTkinter foi ótima para MVP, mas limitava interface e performance para cronometragem profissional.
+- Decisão de stack e arquitetura registrada: agora com Flutter Desktop e monorepo para facilitar integração e versionamento.
+- Roadmap atualizado para modularização, features de ponta e pesquisa de benchmarks globais.
 
 ## 6. Visão de Futuro
 - Ser referência internacional em robustez, precisão e experiência de usuário.
@@ -64,6 +65,26 @@ O futuro do projeto inclui, mas não se limita a:
 - Modularidade e escalabilidade.
 - Features de ponta: resultados em tempo real, splits intermediários, backup automático, analytics avançados.
 - Pesquisa contínua de benchmarks globais.
+
+## Stack de Interface – Decisão
+
+Após análise de prioridades (visual, performance, modernidade, aprendizado e funcionamento offline), a stack escolhida para a nova interface do PV Crono é **Flutter Desktop** (mantendo monorepo: backend Python + frontend Flutter juntos).
+
+**Motivos:**
+- Visual moderno e bonito
+- Performance quase nativa, ideal para grandes eventos
+- Multiplataforma (Linux, Windows, Mac)
+- Funciona 100% offline
+- Aprendizado valorizado no mercado (Dart, UI reativa)
+- Integração facilitada com backend Python
+- Versionamento conjunto e simplicidade para times pequenos
+
+## Próximos Passos
+- Rodar app de exemplo Flutter Desktop em ambos ambientes para validar setup
+- Prototipar tela principal no Flutter
+- Planejar migração incremental dos módulos de UI
+- Atualizar documentação e normas técnicas para Flutter
+- Registrar aprendizados e desafios no Diário de Bordo
 
 ---
 
