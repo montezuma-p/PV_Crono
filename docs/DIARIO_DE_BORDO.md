@@ -4,6 +4,14 @@ Este arquivo registra as missões concluídas, decisões e aprendizados do desen
 
 ---
 
+## [27/06/2025]
+- Instalação e validação do Flutter Desktop no WSL/Linux concluída. Ambiente testado com app de exemplo, confirmando potencial visual e responsivo. Próximo passo: configurar ambiente no Windows para builds multiplataforma.
+- Decisão registrada: stack de interface será Flutter Desktop. Registro anterior de definição de stack removido do roadmap, conforme diretriz.
+- Definir stack de interface alvo (Qt, Flutter, etc) <!-- Decisão: Flutter Desktop concluída e registrada. -->
+    - Em 27/06/2025, após análise de prioridades e testes, a stack de interface foi oficialmente definida como Flutter Desktop. Registro detalhado no Diário de Bordo.
+
+---
+
 ## [27/06/2025] Virada de Chave Estratégica: Rumo à Robustez e Precisão
 
 - Decidido migrar o PV Crono para uma stack de interface premium (Qt, Flutter ou similar), priorizando robustez, precisão e experiência de usuário de nível internacional.
@@ -64,9 +72,8 @@ Este arquivo registra as missões concluídas, decisões e aprendizados do desen
 
 ---
 
-## Missão: "Ofensiva de Testes - Cobertura Total e Correção Crítica" (Concluída)
+## [25/06/2025] "Ofensiva de Testes - Cobertura Total e Correção Crítica" (Concluída)
 
-**Data de Conclusão:** 25 de Junho de 2025
 
 ### Objetivo
 
@@ -96,8 +103,3 @@ Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros cr
 
 ---
 
-## 2025-06-27
-- Instalação e validação do Flutter Desktop no WSL/Linux concluída. Ambiente testado com app de exemplo, confirmando potencial visual e responsivo. Próximo passo: configurar ambiente no Windows para builds multiplataforma.
-- Decisão registrada: stack de interface será Flutter Desktop. Registro anterior de definição de stack removido do roadmap, conforme diretriz.
-- ~~Definir stack de interface alvo (Qt, Flutter, etc)~~ <!-- Decisão: Flutter Desktop concluída e registrada. -->
-    - Em 27/06/2025, após análise de prioridades e testes, a stack de interface foi oficialmente definida como Flutter Desktop. Registro detalhado no Diário de Bordo.
