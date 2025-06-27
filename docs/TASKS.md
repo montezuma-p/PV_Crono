@@ -1,39 +1,35 @@
-# Plano de Batalha - PV Crono
+# Roadmap – PV Crono
 
-Este documento centraliza as próximas tarefas de desenvolvimento, organizadas por prioridade estratégica.
+Este arquivo apresenta o roadmap sequencial do projeto. Ao concluir uma tarefa, marque como concluída (~~riscada~~) e mova o registro detalhado para o `DIARIO_DE_BORDO.md`.
 
----
+## 1. Fundação e Arquitetura
+- [ ] Definir stack de interface alvo (Qt, Flutter, etc)
+- [ ] Revisar e modularizar arquitetura para facilitar integração futura
+- [ ] Code Signing para distribuição
 
-## ⚡ Prioridade Nível 0: CORREÇÃO CRÍTICA (CONCLUÍDA!)
+## 2. Prototipagem e Migração de Interface
+- [ ] Prototipar tela principal na nova stack
+- [ ] Planejar migração incremental dos módulos de UI
+- [ ] Melhorias de UI/UX baseadas em feedback
+- [ ] Atualizar documentação e normas técnicas para refletir a nova visão
 
-**Objetivo:** Corrigir crash crítico na inicialização que impedia uso da aplicação.
+## 3. Core de Cronometragem e Precisão
+- [ ] Implementar feature de precisão (sincronização de tempo, testes de latência)
+- [ ] CRUD de Categorias avançado
+- [ ] Configurações de Evento personalizáveis
 
-**Status:** Resolvido na versão 0.14-alpha. O método `init_db` foi implementado, a inicialização do banco estável e todos os testes passam.
+## 4. Funcionalidades Avançadas
+- [ ] Adicionar feature de resultados em tempo real
+- [ ] Internacionalização (i18n) - PT/EN/ES
+- [ ] API REST para integração
+- [ ] Plataforma Web complementar (Módulo 2)
+- [ ] Dashboard analítico
 
----
-
-## ✅ Prioridade Nível 1: Cobertura de Testes Massiva (CONCLUÍDA!)
-
-**Objetivo:** Garantir que o sistema seja à prova de falhas, criando uma base de testes robusta e abrangente antes de adicionar novas funcionalidades.
-
-**Status:**
-- **209 testes passando (100%)**
-- **Cobertura geral: 71%**
-- **Todos os módulos principais cobertos**
-
----
-
-## 🚧 Próximos Passos (v0.15-alpha)
-
-1. Internacionalização (i18n) - PT/EN/ES
-2. CRUD de Categorias avançado
-3. Configurações de Evento personalizáveis
-4. Code Signing para distribuição
-5. Melhorias de UI/UX baseadas em feedback
-6. Plataforma Web complementar (Módulo 2)
-7. API REST para integração
-8. Dashboard analítico
-
----
-
-> **Este documento é atualizado a cada ciclo de desenvolvimento. Consulte sempre para status e próximos passos.**
+## 5. Expansão e Integração
+- [ ] Sistema de inscrição online
+- [ ] Portal de resultados web
+- [ ] Live tracking em tempo real
+- [ ] App mobile dedicado
+- [ ] Analytics avançados e relatórios interativos
+- [ ] Multi-tenancy e white-label
+- [ ] Cloud deployment e escalabilidade

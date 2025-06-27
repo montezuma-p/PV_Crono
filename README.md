@@ -1,4 +1,4 @@
-# PV Cronometragem (PV Crono v0.14-alpha)
+# PV Cronometragem (PV Crono)
 
 **Software de cronometragem profissional para eventos esportivos de grande porte**
 
@@ -8,23 +8,40 @@
 
 ## 🌟 Destaques do Projeto
 
-- **Uso Prático:** Desenvolvido para gerenciar eventos esportivos reais, com suporte a milhares de participantes.
-- **Objetivo Educacional:** Criado como um estudo de caso para aprendizado em Python, arquitetura de software e integração de tecnologias modernas.
-- **Parceria com IA:** Desenvolvido em colaboração com IA (Codex 2.0), explorando novas fronteiras de produtividade e inovação.
-- **Documentação Centralizada:** Integração de memória persistente com a pasta `docs/` para histórico e evolução do projeto.
-- **Portfólio Profissional:** Estruturado para demonstrar habilidades técnicas e conquistar oportunidades no mercado de trabalho.
+- **Uso Prático:** Gerencia eventos esportivos reais, com suporte a milhares de participantes.
+- **Objetivo Educacional:** Estudo de caso para aprendizado em Python, arquitetura de software e integração de tecnologias modernas.
+- **Parceria com IA:** Desenvolvido em colaboração com IA (Codex 2.0).
+- **Documentação Centralizada:** Toda a evolução registrada na pasta `docs/`.
+- **Portfólio Profissional:** Demonstra habilidades técnicas e organização de projeto.
 
 ---
 
-## 🏃‍♂️ Visão Geral
+## 🏃‍♂️ Visão Geral e Roadmap
 
-O PV Crono v0.14-alpha é a primeira peça de um futuro ecossistema tecnológico completo para eventos esportivos. Ele combina uma interface moderna, arquitetura robusta e funcionalidades avançadas para oferecer uma solução confiável e escalável.
+O PV Crono é a base de um futuro ecossistema completo para eventos esportivos. O projeto está em transição para uma stack de interface premium (Qt, Flutter ou similar) e segue um roadmap sequencial:
 
-### 🎉 Novidades da v0.14-alpha
-- **Cobertura de testes excepcional:** 71% geral, 100% sucesso em 209 testes
-- **Interface modernizada** com design system consistente
-- **Arquitetura robusta** com tratamento avançado de exceções
-- **Relatórios aprimorados** com exportação PDF otimizada
+### Roadmap Atual
+1. **Fundação e Arquitetura**
+   - Definir stack de interface alvo (Qt, Flutter, etc)
+   - Revisar e modularizar arquitetura
+   - Code Signing para distribuição
+2. **Prototipagem e Migração de Interface**
+   - Prototipar tela principal na nova stack
+   - Migração incremental dos módulos de UI
+   - Melhorias de UI/UX baseadas em feedback
+   - Atualizar documentação e normas técnicas
+3. **Core de Cronometragem e Precisão**
+   - Implementar feature de precisão (sincronização de tempo, testes de latência)
+   - CRUD de Categorias avançado
+   - Configurações de Evento personalizáveis
+4. **Funcionalidades Avançadas**
+   - Resultados em tempo real
+   - Internacionalização (i18n)
+   - API REST para integração
+   - Plataforma Web complementar
+   - Dashboard analítico
+
+> Veja o arquivo [`TASKS.md`](./docs/TASKS.md) para o roadmap detalhado e atualizado.
 
 ---
 
@@ -42,21 +59,18 @@ O PV Crono v0.14-alpha é a primeira peça de um futuro ecossistema tecnológico
 ## 📋 Pré-requisitos
 
 - Python 3.12+
-- Sistema operacional: Windows, Linux ou macOS
+- Windows, Linux ou macOS
 - **Para WSL:** X11 server (VcXsrv, Xming ou WSLg) para interface gráfica
 
 ---
 
 ## 🛠️ Instalação
 
-### Instalação Padrão (Linux/Mac/Windows)
-
 1. Clone o repositório:
    ```bash
    git clone <repository-url>
    cd PV_Crono
    ```
-
 2. Crie e ative o ambiente virtual:
    ```bash
    python -m venv venv
@@ -64,7 +78,6 @@ O PV Crono v0.14-alpha é a primeira peça de um futuro ecossistema tecnológico
    # ou
    venv\Scripts\activate     # Windows
    ```
-
 3. Instale as dependências:
    ```bash
    pip install -r requirements.txt
@@ -76,38 +89,25 @@ O PV Crono v0.14-alpha é a primeira peça de um futuro ecossistema tecnológico
 
 ### Aplicação Principal
 ```bash
-# Ativar venv (sempre necessário)
 source venv/bin/activate
-
-# Executar PV Crono v0.14-alpha
 python -m crono_app.app
 ```
 
 ### Bridge RFID
 ```bash
-# Em terminal separado, com venv ativa
 python -m rfid_bridge.bridge
 ```
 
 ---
 
-## 🧪 Testes
+## 🧪 Testes e Qualidade
 
-O PV Crono v0.14-alpha possui uma suíte de testes robusta com **71% de cobertura geral**.
+O projeto possui uma suíte de testes robusta (71% de cobertura geral). Em breve, contará com testes automáticos (CI/CD) via GitHub Actions.
 
-### Executar Testes
 ```bash
-# Ativar venv
 source venv/bin/activate
-
-# Todos os testes
 pytest
-
-# Com relatório de cobertura
 pytest --cov=crono_app --cov=rfid_bridge --cov-report=term-missing
-
-# Teste específico
-pytest tests/test_app.py -v
 ```
 
 ---
@@ -126,14 +126,22 @@ PV_Crono/
 
 ---
 
-> ⚠️ **AVISO IMPORTANTE:**
-> A interface de gerenciamento de categorias (CRUD via modal) foi adicionada na versão atual, mas ainda NÃO está coberta por testes automatizados (pytest). Use com cautela e reporte qualquer problema.
+## 📚 Documentação e Colaboração
+
+- [Visão e status do projeto](./docs/PROJECT_OVERVIEW.md)
+- [Roadmap detalhado](./docs/TASKS.md)
+- [Histórico e aprendizados](./docs/DIARIO_DE_BORDO.md)
+- [Guia de colaboração](./docs/GUIA_DE_COLABORACAO.md)
+- [Explicação do código](./docs/EXPLICACAO_CODIGO.md)
+
+**Como contribuir:**
+- Leia o `GUIA_DE_COLABORACAO.md`.
+- Sugira melhorias, reporte bugs ou envie Pull Requests.
+- Feedbacks e dúvidas são bem-vindos!
 
 ---
 
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
----
 

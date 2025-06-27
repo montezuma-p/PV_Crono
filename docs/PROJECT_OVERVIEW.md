@@ -46,6 +46,25 @@ O futuro do projeto inclui, mas não se limita a:
 - Dashboards analíticos
 - Inovação contínua em UX/UI
 
+## 4. Visão Atual
+- PV Crono é um sistema de cronometragem esportiva robusto, preciso e em evolução contínua.
+- Foco em confiabilidade, precisão, modularidade e experiência de usuário premium.
+- Stack em transição para frameworks de interface premium (Qt, Flutter ou similar).
+
+## 5. Diagnóstico Estratégico (Jun/2025)
+- Cobertura de testes acima de 70%, arquitetura separada (UI, lógica, hardware), documentação clara.
+- Pontos de atenção: falta de features de ponta (resultados em tempo real, splits intermediários, backup automático, analytics avançados, precisão sub-segundo, integração multi-dispositivo).
+- Stack Python + CustomTkinter é ótima para MVP, mas limita interface e performance para cronometragem profissional.
+- Roadmap definido para modularização, features de ponta e pesquisa de benchmarks globais.
+
+## 6. Visão de Futuro
+- Ser referência internacional em robustez, precisão e experiência de usuário.
+- Cronometragem de alta precisão (sincronização NTP/GPS, threads/processos nativos).
+- Interface premium e moderna (Qt, Flutter ou similar).
+- Modularidade e escalabilidade.
+- Features de ponta: resultados em tempo real, splits intermediários, backup automático, analytics avançados.
+- Pesquisa contínua de benchmarks globais.
+
 ---
 
 > **Este documento é atualizado a cada marco importante do projeto. Consulte sempre para status e visão atualizada.**
