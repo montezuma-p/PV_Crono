@@ -93,3 +93,11 @@ Alcançar cobertura de testes robusta (mínimo 70%) e corrigir todos os erros cr
 - **Testes são a base da evolução segura.**
 - **Mocks detalhados garantem testes de UI confiáveis.**
 - **Documentação e workflow centralizados aceleram o desenvolvimento.**
+
+---
+
+## 2025-06-27
+- Instalação e validação do Flutter Desktop no WSL/Linux concluída. Ambiente testado com app de exemplo, confirmando potencial visual e responsivo. Próximo passo: configurar ambiente no Windows para builds multiplataforma.
+- Decisão registrada: stack de interface será Flutter Desktop. Registro anterior de definição de stack removido do roadmap, conforme diretriz.
+- ~~Definir stack de interface alvo (Qt, Flutter, etc)~~ <!-- Decisão: Flutter Desktop concluída e registrada. -->
+    - Em 27/06/2025, após análise de prioridades e testes, a stack de interface foi oficialmente definida como Flutter Desktop. Registro detalhado no Diário de Bordo.

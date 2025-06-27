@@ -145,3 +145,9 @@ PV_Crono/
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
+---
+
+> 🔔 **Atualização:** Em junho/2025, a stack de interface foi oficialmente migrada para **Flutter Desktop**. Veja detalhes e próximos passos em `PROJECT_OVERVIEW.md`.
+
+> ℹ️ **Nota:** Para rodar e testar a nova interface, é necessário instalar o Flutter SDK e configurar o ambiente desktop (Linux/WSL e Windows). Veja instruções no Diário de Bordo e no roadmap (`TASKS.md`).
+
