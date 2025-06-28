@@ -6,6 +6,14 @@
 
 ---
 
+> ⚠️ **Licença:**
+> - O código deste projeto é público apenas para fins de estudo, portfólio e inspiração.
+> - **É proibido qualquer uso comercial, revenda, SaaS ou incorporação em produtos comerciais por terceiros.**
+> - O uso comercial é restrito exclusivamente ao(s) autor(es).
+> - Veja detalhes no arquivo [LICENSE](./LICENSE) e [LICENSE_pt-BR.txt](./LICENSE_pt-BR.txt).
+
+---
+
 ## 🌟 Destaques do Projeto
 
 - **Uso Prático:** Gerencia eventos esportivos reais, com suporte a milhares de participantes.

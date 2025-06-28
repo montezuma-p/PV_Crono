@@ -1,0 +1,9 @@
+Copyright (c) 2025 montezuma-p
+
+Este software é disponibilizado publicamente apenas para fins de estudo, portfólio e inspiração.
+
+É expressamente proibido qualquer uso comercial, revenda, prestação de serviços, SaaS ou incorporação em produtos comerciais por terceiros.
+
+O uso comercial é restrito exclusivamente ao(s) autor(es).
+
+Para permissões além destas, entre em contato com o autor.
